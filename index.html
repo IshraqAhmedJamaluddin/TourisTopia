@@ -8,7 +8,32 @@
 </head>
 <body>
     <div class="overlay" id="overlay"></div>
-    <div class="hero-bg">
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+                <img src="/img/Aswan1.jpg" style="width:100%">
+                <div class="text">
+                    <img src="" alt="location">
+                    Aswan, Egypt.
+                </div>
+            </div>
+        
+            <div class="mySlides fade">
+                <img src="/img/Stanley.jpg" style="width:100%">
+                <div class="text">
+                    <img src="" alt="location">
+                    Alexandria, Egypt.
+                </div>
+            </div>
+        
+            <div class="mySlides fade">
+                <img src="/img/AbuSimbel.jpg" style="width:100%">
+                <div class="text">
+                    <img src="" alt="location">
+                    Luxor, Egypt.
+                </div>
+            </div>
+
         <header>
             <img src="" alt="TourisTopia logo" class="logo" id="logo">
             <h1>TourisTopia</h1>
@@ -26,6 +51,11 @@
                 <input type="button" value="" id="sear-btn">
             </div>
         </form>
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
     </div>
 </body>
 </html>
