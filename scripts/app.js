@@ -1,14 +1,18 @@
 function currentSlide(num) {
     var container = document.getElementById("slideshow-container");
+    var caption = document.getElementById("cap-loc");
     container.style.opacity = "0";
     if (num == 1) {
         container.style.background = "url(/img/Aswan1.jpg)";
+        caption.innerText = "Aswan, Egypt."
     }
     if (num == 2) {
-        container.style.background = "url(/img/Aswan2.jpg)";
+        container.style.background = "url(/img/Alex1.jpg)";
+        caption.innerText = "Alex, Egypt."
     }
     if (num == 3) {
-        container.style.background = "url(/img/Aswan3.jpg)";
+        container.style.background = "url(/img/Dahab1.jpg)";
+        caption.innerText = "Dahab, Egypt."
     }
     fadeIn(container);
     container.style["background-position-x"] = "center";
