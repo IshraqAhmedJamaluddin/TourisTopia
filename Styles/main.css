@@ -1,28 +1,87 @@
-* {box-sizing:border-box}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    margin: 0em;
+    position: relative;
+}
+
+* {
+    box-sizing:border-box
+}
+
+
+header h1 {
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    font-size: 4rem;
+    font-weight: normal;
+    text-shadow: 1px 1px rgb(68, 68, 68);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding:1.5em;
+}
+
+.logo {
+    width: 5em;
+    height: 5em;
+}
+
+form {
+    padding: 5em
+}
+
+label {
+    color: white;
+    font-style: italic;
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: .5em;
+}
+
+.location {
+    width: 1em;
+    height: 1em;
+}
+
+.bar {
+    background: white;
+    border-radius: .5em;
+    border: solid .5em rgba(59, 59, 59, 0.5);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    margin: .5em;
+    width: fit-content;
+}
+
+#sear-btn {
+    width: 1em;
+    height: 1em;
+}
+
+input[type=text] {
+    width: 15em;
+    border: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input::-webkit-calendar-picker-indicator {
+    opacity: 100;
+ }
+
+
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+    background: url(/img/Aswan1.jpg);
+    position: relative;
+    background-position-x: center;
+    background-size: cover;
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Caption text */
-.text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-    text-transform: uppercase;
-  }
 
 /* The dots/bullets/indicators */
 .dot {
@@ -34,6 +93,8 @@
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
+    position: absolute;
+    bottom: 0;
 }
 
 .active, .dot:hover {
