@@ -18,7 +18,7 @@ header a {
     font-size: 4rem;
     font-weight: normal;
     text-decoration: none;
-    text-shadow: 1px 1px rgb(68, 68, 68);
+    text-shadow: 2px 2px 8px rgb(68, 68, 68);
 }
 
 header a:hover {
@@ -45,6 +45,7 @@ label {
     font-style: italic;
     font-size: 2rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 2px 2px 8px rgb(68, 68, 68);
     margin: .5em;
 }
 
