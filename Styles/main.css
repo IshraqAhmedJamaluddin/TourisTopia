@@ -95,17 +95,28 @@ input::-webkit-calendar-picker-indicator {
     cursor: pointer;
     height: 15px;
     width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
+    margin: .5em .5em;
+    background-color: rgba(187, 187, 187, 0.26);
+    border: solid 2px rgb(0,88,88);
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
+}
+.dots {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    bottom: 0;
+    width: 100%;
+    bottom:0;
+    padding-bottom: 2em;
 }
 
 .active, .dot:hover {
-    background-color: #717171;
+    background-color: rgb(0, 88, 88);
+    width: 18px;
+    height: 18px;
 }
 
 /* Fading animation */
