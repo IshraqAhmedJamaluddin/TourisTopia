@@ -34,3 +34,19 @@ function fadeIn(el) {
     };
     tick();
 }
+
+function goToCity() {
+    var dest = document.getElementById("dest").value;
+    if(!dest){
+        window.location.href = "#";
+        return;
+    }
+    window.location.href = "city.html";
+    var xhr = new XMLHttpRequest;
+    xhr.onload = () => {
+        document.title=name;
+    }
+    xhr.open("POST","/server.js");
+    xhr.responseType = JSON;
+    xhr.send(dest);
+};
