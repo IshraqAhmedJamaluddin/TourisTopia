@@ -45,13 +45,19 @@ function goToCity() {
 }
 
 window.onload = () => {
+    var places = document.getElementById("places");
     var xhr = new XMLHttpRequest;
     xhr.onload = () => {
-        var body = XMLHttpRequest.response;
-        //n7mel kol l options mn l db
+        var destinations = xhr.response.destinations;
+        for (i = 0; i < destinations.length; i++) { 
+            var place = document.createElement("option");
+            var textnode = document.createTextNode(destinations[i]);
+            place.appendChild(textnode);  
+            places.appendChild(place);
+        } 
     }
-    xhr.open("GET","/server.js");
-    xhr.responseType = JSON;
+    xhr.open("GET","/test.json");
+    xhr.responseType = "json";
     xhr.send();
 }
 
