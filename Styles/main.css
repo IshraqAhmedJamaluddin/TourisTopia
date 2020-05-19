@@ -37,7 +37,7 @@ header {
 }
 
 form {
-    padding: 5em
+    padding: 3em
 }
 
 label {
@@ -80,7 +80,7 @@ input[type=image]{
 }
 
 input[type=text] {
-    width: 15em;
+    width: 10em;
     border: transparent;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -97,7 +97,7 @@ input::-webkit-calendar-picker-indicator {
     display: flex;
     align-items: center;
     position: absolute;
-    right: 5em;
+    right: 2em;
     bottom:0;
     padding-bottom: 2em;
  }
@@ -133,7 +133,7 @@ input::-webkit-calendar-picker-indicator {
     position: absolute;
     width: 100%;
     bottom:0;
-    padding-bottom: 2em;
+    padding-bottom: 4em;
 }
 
 .active, .dot:hover {
@@ -168,5 +168,19 @@ input::-webkit-calendar-picker-indicator {
       input[type=text] {
         width: 25em;
         font-size: 1.1rem;
+    }     
+    .caption {
+        right: 5em;
     }
-  }
+    input[type=text] {
+        width: 15em;
+    }
+    
+    .dots {
+        padding-bottom: 2em;
+    }
+        
+    form {
+        padding: 5em
+    }
+}
