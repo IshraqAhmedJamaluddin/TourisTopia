@@ -81,6 +81,7 @@ for (var i = 0; i < inputs.length; i++) {
       this.setCustomValidity('');
     } else {
       this.setCustomValidity('Please choose from the available destinations ^_^');
+      this.value="";
     }
   });
 }
