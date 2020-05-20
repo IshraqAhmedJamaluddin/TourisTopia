@@ -41,7 +41,9 @@ function goToCity() {
         window.location.href = "#";
         return;
     }
-    window.location.href = "city.html";
+    var destination = document.getElementById("dest").value;
+    localStorage.setItem("destName",destination);
+    window.location.href = "dest.html";
 }
 
 window.onload = () => {
