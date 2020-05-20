@@ -23,7 +23,7 @@ def setup_db(app, database_path=database_path):
 destination
 
 '''
-class Destination(db.Model):  
+class Destination(db.Model):
   __tablename__ = 'destination'
 
   id = Column(Integer, primary_key=True)
@@ -35,7 +35,7 @@ class Destination(db.Model):
   first_paragraph = db.Column(db.String)
   second_paragraph = db.Column(db.String)
 
-  def __init__(self, location, city, heading, image_link, background_link,first_paragraph,second_paragraph):
+  def __init__(self, location, city, heading, image_link, background_link, first_paragraph, second_paragraph):
     self.location = location
     self.city = city
     self.heading = heading
@@ -75,13 +75,13 @@ class Location(db.Model):
   __tablename__ = 'location'
 
   id = Column(Integer, primary_key=True)
-  type = Column(String)
+  address = Column(String)
 
-  def __init__(self, type):
-    self.type = type
+  def __init__(self, address):
+    self.address = address
 
   def format(self):
     return {
       'id': self.id,
-      'location': self.type
+      'location': self.address
     }
