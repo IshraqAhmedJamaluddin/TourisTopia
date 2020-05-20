@@ -1,0 +1,277 @@
+@import url(font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0em;
+    position: relative;
+    height: 100%;
+}
+
+header a {
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    font-size: 4rem;
+    font-weight: normal;
+    text-decoration: none;
+    text-shadow: 2px 2px 8px rgb(68, 68, 68);
+}
+
+header a:hover {
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 1.5em;
+}
+
+.logo {
+    width: 5em;
+    height: 5em;
+}
+
+form {
+    padding: 3em
+}
+
+label {
+    color: white;
+    font-style: italic;
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 2px 2px 8px rgb(68, 68, 68);
+    margin: .5em;
+    font-weight: 700;
+    display: block;
+}
+
+.location {
+    width: 1em;
+    height: 1em;
+}
+
+.bar {
+    background: white;
+    border-radius: .5em;
+    border: solid .5em rgba(59, 59, 59, 0.5);
+    -webkit-background-clip: padding-box;
+    /* for Safari */
+    background-clip: padding-box;
+    /* for IE9+, Firefox 4+, Opera, Chrome */
+    margin: .5em;
+    width: fit-content;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: .3em;
+}
+
+input[type=image] {
+    background: transparent;
+    padding: 0;
+    margin-right: .1em;
+}
+
+#sear-btn {
+    width: 1em;
+    height: 1em;
+}
+
+input[type=text] {
+    width: 10em;
+    border: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input::-webkit-calendar-picker-indicator {
+    opacity: 100;
+}
+
+.caption {
+    align-content: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgb(68, 68, 68);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 2em;
+    bottom: 0;
+    padding-bottom: 2em;
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    background: url(img/Aswan1.jpg);
+    position: relative;
+    background-position-x: center;
+    background-size: cover;
+    height: 100%;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: .5em .5em;
+    background-color: rgba(187, 187, 187, 0.26);
+    border: solid 2px rgb(0, 88, 88);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dots {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: 4em;
+}
+
+.active,
+.dot:hover {
+    background-color: rgb(0, 88, 88);
+    width: 18px;
+    height: 18px;
+}
+
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+
+/* Footer */
+
+#footer {
+    align-content: center;
+    justify-content: center;
+    text-shadow: 2px 2px 8px rgb(68, 68, 68);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 2em;
+    bottom: 0;
+    padding-bottom: 2em;
+}
+
+.icon {
+    text-decoration: none;
+    border-bottom: none;
+    position: relative;
+}
+
+.icon:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none !important;
+}
+
+ul.icons {
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.icons li {
+    display: inline-block;
+    padding: 0 1.25em 0 0;
+}
+
+ul.icons li:last-child {
+    padding-right: 0 !important;
+}
+
+ul.icons li .icon {
+    border-radius: 0.5em;
+    border: solid 1px rgb(255, 255, 255);
+    color: white !important;
+    display: inline-block;
+    font-size: 1em;
+    height: 2.75em;
+    line-height: 2.75em;
+    text-align: center;
+    width: 2.75em;
+}
+
+ul.icons li a.icon {
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+ul.icons li a.icon:hover {
+    background-color: rgba(144, 144, 144, 0.075);
+}
+
+ul.icons li a.icon:active {
+    background-color: rgba(144, 144, 144, 0.2);
+}
+
+#footer .icons {
+    margin: 0 0 4em 0;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@media(min-width: 900px) {
+    .slideshow-container {
+        background-position-y: center;
+    }
+    input[type=text] {
+        width: 25em;
+        font-size: 1.1rem;
+    }
+    .caption {
+        right: 5em;
+    }
+    input[type=text] {
+        width: 15em;
+    }
+    .dots {
+        padding-bottom: 2em;
+    }
+    form {
+        padding: 5em
+    }
+}
