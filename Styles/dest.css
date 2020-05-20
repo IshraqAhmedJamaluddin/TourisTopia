@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /* Custom Properties */
 
@@ -6,14 +6,37 @@
     --leading: 2em;
 }
 
+header a {
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    font-size: 4rem;
+    font-weight: normal;
+    text-decoration: none;
+    text-shadow: 2px 2px 8px rgb(68, 68, 68);
+}
+
+header a:hover {
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding:1.5em;
+}
+
+.logo {
+    width: 5em;
+    height: 5em;
+}
+
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
 }
 
-.hero-bg {
-    background: #307D99 url('/img/Stanley.jpg');
-    background-position: 12% 83%;
+#hero-bg {
     color: white;
     text-align: center;
     padding-bottom: 4em;
@@ -90,6 +113,7 @@ h2::before {
 
 img {
     width: 100%;
+    margin-bottom: -1em;
 }
 
 p {

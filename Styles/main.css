@@ -6,11 +6,6 @@ body {
     height: 100%;
 }
 
-* {
-    box-sizing:border-box
-}
-
-
 header a {
     text-transform: uppercase;
     font-family: 'Bebas Neue', cursive;
