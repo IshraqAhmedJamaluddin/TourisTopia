@@ -35,7 +35,7 @@ window.onload = () => {
             container.style["background-position-y"] = "center";
         }
     }
-    xhr.open("GET", "/test2.json");
+    xhr.open("GET", "test2.json");
     xhr.responseType = "json";
     xhr.send();
 }

@@ -107,7 +107,7 @@ input::-webkit-calendar-picker-indicator {
 /* Slideshow container */
 
 .slideshow-container {
-    background: url(img/Aswan1.jpg);
+    background: url(../img/Aswan1.jpg);
     position: relative;
     background-position-x: center;
     background-size: cover;
