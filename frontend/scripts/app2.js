@@ -35,7 +35,7 @@ window.onload = () => {
             container.style["background-position-y"] = "center";
         }
     }
-    xhr.open("POST", "http://localhost:5000/destinations/search");
+    xhr.open("POST", "http://127.0.0.1:5000/destination");
     xhr.responseType = "json";
-    xhr.send({"title":"helwan"});
+    xhr.send({ "title": "helwan" });
 }
