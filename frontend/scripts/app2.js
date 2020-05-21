@@ -9,24 +9,24 @@ window.onload = () => {
         var textnode = document.createTextNode(xhr.response.city);
         var city = document.createElement("span");
         city.appendChild(textnode);
-        var place = document.createTextNode(xhr.response.place);
+        var place = document.createTextNode(xhr.response.location);
         document.getElementById("h1").appendChild(city);
         document.getElementById("h1").appendChild(place);
 
-        var textnode = document.createTextNode(xhr.response.p1);
+        var textnode = document.createTextNode(xhr.response.first_paragraph);
         document.getElementById("p1").appendChild(textnode);
 
         var textnode = document.createTextNode(xhr.response.heading);
         document.getElementById("heading").appendChild(textnode);
 
-        var textnode = document.createTextNode(xhr.response.p2);
+        var textnode = document.createTextNode(xhr.response.second_paragraph);
         document.getElementById("p2").appendChild(textnode);
 
-        document.getElementById("img").src = xhr.response.img;
+        document.getElementById("img").src = xhr.response.image_link;
         document.getElementById("img").alt = xhr.response.place;
 
         var container = document.getElementById("hero-bg");
-        container.style.background = "#307D99 url('" + xhr.response.bg + "')";
+        container.style.background = "#307D99 url('" + xhr.response.background_link + "')";
         container.style["background-position-x"] = "center";
         container.style["background-size"] = "cover";
         container.style.position = "relative";
