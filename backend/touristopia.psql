@@ -60,6 +60,7 @@ ALTER SEQUENCE public.location_id_seq OWNED BY public.location.id;
 
 CREATE TABLE public.destination (
     id integer NOT NULL,
+    city text,
     location text,
     heading text,
     image_link text,
