@@ -58,6 +58,9 @@ window.onload = () => {
             places.appendChild(place);
         }
     }
+    xhr.onerror = function() {
+        alert('Network Error');
+    };
     xhr.open("GET", "http://localhost:5000/locations");
     xhr.responseType = "json";
     xhr.send();

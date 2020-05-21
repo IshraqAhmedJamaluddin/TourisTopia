@@ -35,6 +35,9 @@ window.onload = () => {
             container.style["background-position-y"] = "center";
         }
     }
+    xhr.onerror = function() {
+        alert('Network Error');
+    };
     xhr.open("POST", "http://localhost:5000/destinations/search");
     xhr.responseType = "json";
     xhr.send(JSON.stringify({title:"helwan"}));
