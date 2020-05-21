@@ -24,13 +24,14 @@ def create_app(test_config=None):
   setup_db(app)
   
   #CORS 
-  CORS(app, resources={r"/api/*": {"origins": "*"}})
+  CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}})
  
   #CORS Headers
   @app.after_request
   def after_request(response):
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization,true')
-    response.headers.add('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization,true')
+    response.headers.add('Access-Control-Allow-Origin', 'http://127.0.0.1:5500')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,POST,OPTIONS')
     return response
   
   @app.route('/locations', methods=['GET'])
@@ -47,7 +48,7 @@ def create_app(test_config=None):
     except:
       abort(405)
 
-  @app.route('/destinations/search', methods=['POST'])
+  @app.route('/destination', methods=['POST'])
   def search_destinations():
     body = request.get_json()
     title = body.get('title', None)
