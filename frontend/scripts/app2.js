@@ -2,7 +2,7 @@ window.onload = () => {
     var destination = localStorage.getItem("destName");
     document.title = destination;
 
-    //tb3an hnb3at l title lli fo2 daf POST
+    //tb3an hnb3at l title lli fo2 daf POST toz feky
     var xhr = new XMLHttpRequest;
     xhr.onload = () => {
 
