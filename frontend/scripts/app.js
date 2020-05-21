@@ -58,7 +58,7 @@ window.onload = () => {
             places.appendChild(place);
         }
     }
-    xhr.open("GET", "test.json");
+    xhr.open("GET", "/locations");
     xhr.responseType = "json";
     xhr.send();
 }
