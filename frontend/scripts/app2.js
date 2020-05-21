@@ -2,7 +2,7 @@ window.onload = () => {
     var destination = localStorage.getItem("destName");
     document.title = destination;
 
-    //tb3an hnb3at l title lli fo2 daf POST toz feky
+    //tb3an hnb3at l title lli fo2 daf POST
     var xhr = new XMLHttpRequest;
     xhr.onload = () => {
 
@@ -35,7 +35,7 @@ window.onload = () => {
             container.style["background-position-y"] = "center";
         }
     }
-    xhr.open("POST", "/destinations/search");
+    xhr.open("GET", "/test2.json");
     xhr.responseType = "json";
     xhr.send();
 }

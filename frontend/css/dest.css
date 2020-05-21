@@ -23,7 +23,7 @@ header a:hover {
 header {
     display: flex;
     align-items: center;
-    padding:1.5em;
+    padding: 1.5em;
 }
 
 .logo {
@@ -57,7 +57,7 @@ section {
     margin: 0 1em;
 }
 
-h1{
+h1 {
     font-size: 2.5rem;
     margin: 2em 0 1.2em;
 }
@@ -76,7 +76,7 @@ h1 span::before {
     width: 3em;
     background: #00BFFF;
     height: .4em;
-    bottom:0;
+    bottom: 0;
     z-index: -1;
     margin-left: -.3em;
 }
@@ -106,7 +106,7 @@ h2::before {
     width: 8em;
     background: #00BFFF;
     height: .4em;
-    bottom:0;
+    bottom: 0;
     z-index: -1;
     margin-left: -.3em;
 }
@@ -124,13 +124,14 @@ p {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(0,0,0,.9);
+    background: rgba(0, 0, 0, .9);
     z-index: 1;
     place-content: center;
     color: white;
     display: none;
     opacity: 0;
 }
+
 .animate-overlay {
     animation: overlay 3s forwards;
 }
@@ -139,7 +140,6 @@ p {
     section {
         margin: 0 4em;
     }
-
     .form-container {
         margin: 2em -4em 0;
     }
@@ -149,26 +149,21 @@ p {
     .hero-bg {
         text-align: left;
     }
-
     .hero-bg p {
         margin: 0 0 3em;
     }
-
     .hero-bg section {
         width: 65%;
     }
-
     .form-container {
         margin: 2em 0 0;
         padding: 2em;
         border-radius: .5em;
-        box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     }
-    
     form {
         display: flex;
     }
-
     .form-left {
         width: 70%;
     }
@@ -191,14 +186,12 @@ p {
         grid-template-columns: repeat(2, 50%);
         grid-template-areas: "bowl content";
     }
-
     .right-col {
         grid-area: content;
         padding: 0 10%;
         text-align: left;
         align-self: center;
     }
-
     img {
         grid-area: bowl;
     }
