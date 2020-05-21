@@ -37,5 +37,5 @@ window.onload = () => {
     }
     xhr.open("POST", "http://localhost:5000/destinations/search");
     xhr.responseType = "json";
-    xhr.send({"title":"helwan"});
+    xhr.send(JSON.stringify({title:"helwan"}));
 }
