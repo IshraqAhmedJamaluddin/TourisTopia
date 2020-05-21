@@ -33,100 +33,30 @@ def create_app(test_config=None):
     response.headers.add('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS')
     return response
   
-  @app.route('/', methods=['GET'])
-  def retrieve_questions():
-    categories = {}
-    current_category = []
+  @app.route('/locations', methods=['GET'])
+  def retrieve_locations():
+    destinations = []
     try:
-      questions = Question.query.order_by(Question.category).all()
-      current_questions = paginate_questions(request, questions)
-
-      selection = Question.query.with_entities(Question.category).order_by(Question.category).all()
-      for category in selection:
-          for innerlist in category:
-            current_category.append(innerlist)
-
-      cat = Category.query.order_by(Category.id).all()
-      for category in cat:
-            categories[category.id] = category.type
+      dest = Location.query.with_entities(Location.address).order_by(Location.id).all()
+      for destination in dest:
+        for innerlist in destination:
+          destinations.append(innerlist)
       return jsonify({
-        'success': True,
-        'questions': current_questions,
-        'total_questions': len(Question.query.all()),
-        'categories': categories,
-        'current_category': current_category
+        'destinations': destinations,
       })
     except:
       abort(405)
-  
-  @app.route('/destinations', methods=['GET'])
-  def retrieve_categories():
-    categories = {}
-    try:
-      selection = Category.query.order_by(Category.id).all()
-      for category in selection:
-            categories[category.id] = category.type
-      return jsonify({
-        'success': True,
-        'categories': categories,
-      })
-    except:
-      abort(405)
- 
-
-  @app.route('/destinations/<int:id>', methods=['DELETE'])
-  def delete_question(id):
-    try:
-      question = Question.query.get(id)
-      question.delete()
-      return jsonify({
-        'success': True,
-      })
-    except:
-      abort(422)
-
-
-  @app.route('/destinations', methods=['POST'])
-  def create_question():
-    try: 
-      body = request.get_json()
-
-      new_question = body.get('question', None)
-      new_answer = body.get('answer', None)
-      new_category = int(body.get('category', None))
-      new_difficulty = int(body.get('difficulty', None))
-
-      question = Question(question=new_question, answer=new_answer, category=new_category, difficulty=new_difficulty)
-      question.insert()
-
-      return jsonify({
-      'success': True
-    })
-    except:
-      abort(405)
-
 
   @app.route('/destinations/search', methods=['POST'])
   def search_destinations():
     body = request.get_json()
-    search_term = body.get('searchTerm', None)
-    current_category = []
+    title = body.get('title', None)
     try:
-      search = '%{}%'.format(search_term)
-      selection = Question.query.order_by(Question.category).filter(Question.question.ilike(search)).all()
-      questions = paginate_questions(request, selection)
-
-      categories = Question.query.with_entities(Question.category).order_by(Question.category).filter(Question.question.ilike(search)).all()
-      for category in categories:
-        for innerlist in category:
-          current_category.append(innerlist)
-
-      return jsonify({
-          'success': True,
-          'questions': questions,
-          'current_category': current_category,
-          'total_questions': len(selection)
-        })
+      search = '%{}%'.format(title)
+      selection = Destination.query.order_by(Destination.id).filter(Destination.location.ilike(search)).all()
+      destinations = [destination.format() for destination in selection]
+      
+      return jsonify(destinations)
     except:
       abort(422)
 
@@ -171,3 +101,77 @@ def create_app(test_config=None):
     }), 500
 
   return app
+"""
+@app.route('/', methods=['GET'])
+  def retrieve_questions():
+    categories = {}
+    current_category = []
+    try:
+      questions = Question.query.order_by(Question.category).all()
+      current_questions = paginate_questions(request, questions)
+
+      selection = Question.query.with_entities(Question.category).order_by(Question.category).all()
+      for category in selection:
+          for innerlist in category:
+            current_category.append(innerlist)
+
+      cat = Category.query.order_by(Category.id).all()
+      for category in cat:
+            categories[category.id] = category.type
+      return jsonify({
+        'success': True,
+        'questions': current_questions,
+        'total_questions': len(Question.query.all()),
+        'categories': categories,
+        'current_category': current_category
+      })
+    except:
+      abort(405)
+
+  @app.route('/destinations/<int:id>', methods=['DELETE'])
+  def delete_question(id):
+    try:
+      question = Question.query.get(id)
+      question.delete()
+      return jsonify({
+        'success': True,
+      })
+    except:
+      abort(422)
+
+
+  @app.route('/destinations', methods=['POST'])
+  def create_question():
+    try: 
+      body = request.get_json()
+
+      new_question = body.get('question', None)
+      new_answer = body.get('answer', None)
+      new_category = int(body.get('category', None))
+      new_difficulty = int(body.get('difficulty', None))
+
+      question = Question(question=new_question, answer=new_answer, category=new_category, difficulty=new_difficulty)
+      question.insert()
+
+      return jsonify({
+      'success': True
+    })
+    except:
+      abort(405)
+
+"""
+"""
+  @app.route('/locations', methods=['GET'])
+  def retrieve_locations():
+    locations = {}
+    try:
+      selection = Category.query.order_by(Category.id).all()
+      for category in selection:
+            categories[category.id] = category.type
+      return jsonify({
+        'success': True,
+        'categories': categories,
+      })
+    except:
+      abort(405)
+ """
