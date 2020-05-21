@@ -3,15 +3,15 @@ function currentSlide(num) {
     var caption = document.getElementById("cap-loc");
     container.style.opacity = "0";
     if (num == 1) {
-        container.style.background = "url(img/Aswan1.jpg)";
+        container.style.background = "url(/img/Aswan1.jpg)";
         caption.innerText = "Aswan, Egypt."
     }
     if (num == 2) {
-        container.style.background = "url(img/Alex1.jpg)";
+        container.style.background = "url(/img/Alex1.jpg)";
         caption.innerText = "Alex, Egypt."
     }
     if (num == 3) {
-        container.style.background = "url(img/Dahab1.jpg)";
+        container.style.background = "url(/img/Dahab1.jpg)";
         caption.innerText = "Dahab, Egypt."
     }
     fadeIn(container);
@@ -58,7 +58,7 @@ window.onload = () => {
             places.appendChild(place);
         }
     }
-    xhr.open("GET", "test.json");
+    xhr.open("GET", "http://localhost:5000/locations");
     xhr.responseType = "json";
     xhr.send();
 }

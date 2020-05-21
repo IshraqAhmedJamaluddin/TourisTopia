@@ -35,7 +35,7 @@ window.onload = () => {
             container.style["background-position-y"] = "center";
         }
     }
-    xhr.open("GET", "test2.json");
+    xhr.open("POST", "http://localhost:5000/destinations/search");
     xhr.responseType = "json";
-    xhr.send();
+    xhr.send({"title":"helwan"});
 }
