@@ -36,6 +36,11 @@ window.onload = () => {
         }
     }
     xhr.open("POST", "http://127.0.0.1:5000/destination");
+    xhr.onerror = function() {
+        alert('Network Error');
+    };
+    xhr.open("POST", "http://localhost:5000/destinations/search");
     xhr.responseType = "json";
     xhr.send({ "title": "helwan" });
+    xhr.send(JSON.stringify({ title: "helwan" }));
 }
